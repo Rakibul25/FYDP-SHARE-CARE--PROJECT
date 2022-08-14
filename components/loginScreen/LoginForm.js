@@ -68,7 +68,7 @@ const LoginForm = ({navigation}) => {
           >
         <TextInput 
             placeholderTextColor='#444'
-            placeholder='Phone number, username or email'
+            placeholder='Phone number, email or uiu id'
             autoCapitalize='none'
             keyboardType='email-address'
             textContentType='emailAddress'

@@ -1,12 +1,20 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import Constants from 'expo-constants';
+import { View, SafeAreaView,} from 'react-native';
+import HomeScreens from '../components/Home/HomeScreens';
 
-const Home = () => {
+
+
+
+
+export default function Home() {
+   
   return (
-    <View>
-      <Text>Welcome to Share Care</Text>
-    </View>
-  )
+    <SafeAreaView  style={{ backgroundColor:'#eee', flex:1, paddingTop: Platform.OS === 'ios' ? 0:Constants.statusBarHeight, }}>
+      <View >
+          <HomeScreens />
+      </View>
+    </SafeAreaView>
+  );
 }
 
-export default Home

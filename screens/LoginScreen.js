@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
 import LoginForm from '../components/loginScreen/LoginForm';
 
-const INSTAGRAM_LOGO = 'https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png'
+const INSTAGRAM_LOGO = 'https://www.uiu.ac.bd/wp-content/uploads/2016/02/UIU-Logo-250.png'
 
 
 const LoginScreen = ({navigation}) => (
