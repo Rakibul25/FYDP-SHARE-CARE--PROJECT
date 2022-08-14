@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import  Validator  from 'email-validator';
 
 
+
 const SignupForm = ({navigation}) => {
     const SignupFormSchema = Yup.object().shape({
       email: Yup.string().email().required('An email is required'),
@@ -14,32 +15,6 @@ const SignupForm = ({navigation}) => {
       .min(6, 'Your password has to have at least 6 charactes')
     })
 
-    const getRandomProfilePicture = async () => {
-       const response = await fetch('https://randomuser.me/api')
-       const data = await response.json()
-       return data.results[0].picture.large
-
-    }
-
-    const onSignup  = async (email, password, username) => {
-      try{
-       const authUser = await firebase
-       .auth()
-       .createUserWithEmailAndPassword(email, password)
-        console.log("🔥 Firebase User Created Successfully ✅", email, password)
-
-       db.collection('users')
-         .doc(authUser.user.email)
-         .set({
-         owner_uid: authUser.user.uid,
-         username: username,
-         email: authUser.user.email,
-         profile_picture: await getRandomProfilePicture(),
-        })
-     } catch(error){
-         Alert.alert('🔥 My Lord ...', error.message)
-      }
-    }
 
 
     return (
@@ -48,7 +23,7 @@ const SignupForm = ({navigation}) => {
       <Formik 
          initialValues={{ email: '' , username: '' , password: '' }}
          onSubmit={values => {
-           //console.log(values)
+           console.log(values)
            onSignup(values.email, values.password, values.username)
          }}
          validationSchema={SignupFormSchema}
@@ -131,7 +106,7 @@ const SignupForm = ({navigation}) => {
         
      </View>
       <View style={{ alignItems:'flex-end', marginBottom: 30,  }}>
-        <Text style={{color:'#6BB0F5'}}>Forgot password?</Text>
+        {/* <Text style={{color:'#6BB0F5'}}>Forgot password?</Text> */}
       </View>
 
      <Pressable 

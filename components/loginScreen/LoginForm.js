@@ -46,7 +46,7 @@ const LoginForm = ({navigation}) => {
       <Formik 
          initialValues={{email: '' , password: '' }}
          onSubmit={values => {
-           // console.log(values)
+            console.log(values)
            onLogin(values.email, values.password)
          }}
          validationSchema={LoginFormSchema}
