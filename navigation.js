@@ -9,16 +9,11 @@ import SignupScreen from './screens/SignupScreen';
 export default function RootNavigation() {
     const Stack = createNativeStackNavigator();
 
-//      const screenOptions = {
-//     headerShown: false,
-//   };
-
 
   return (
     <NavigationContainer>
          <Stack.Navigator 
-            initialRouteName="LoginScreen" 
-            // screenOptions={screenOptions}
+            initialRouteName="Home" 
          >
         <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
         <Stack.Screen name='LoginScreen' component={LoginScreen} options={{ headerShown: false }} />
@@ -27,3 +22,4 @@ export default function RootNavigation() {
     </NavigationContainer>
   );
 } 
+ 
